@@ -9,33 +9,35 @@ package model;
  *
  * @author 182120038
  */
-public class Pessoa {
+public class MCarro {
 
-    private int idPessoa;
+    private int idCarro;
     private String carro;
     private String marca;
     private String modelo;
     private int ano;
     private String proprietario;
+    private String renavam;
 
-    public Pessoa() {
+    public MCarro() {
     }
 
-    public Pessoa(int idPessoa, String carro, String marca, String modelo, int ano, String proprietario) {
-        this.idPessoa = idPessoa;
+    public MCarro(int idCarro, String carro, String marca, String modelo, int ano, String proprietario, String renavam) {
+        this.idCarro = idCarro;
         this.carro = carro;
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.proprietario = proprietario;
+        this.renavam = renavam;
     }
 
-    public int getIdPessoa() {
-        return idPessoa;
+    public int getIdCarro() {
+        return idCarro;
     }
 
-    public void setIdPessoa(int idPessoa) {
-        this.idPessoa = idPessoa;
+    public void setIdCarro(int idCarro) {
+        this.idCarro = idCarro;
     }
 
     public String getCarro() {
@@ -78,9 +80,19 @@ public class Pessoa {
         this.proprietario = proprietario;
     }
 
+    public String getRenavam() {
+        return renavam;
+    }
+
+    public void setRenavam(String renavam) {
+        this.renavam = renavam;
+    }
+
     @Override
     public String toString() {
-        return "Pessoa" + "idPessoa=" + idPessoa + ", carro=" + carro + ", marca=" + marca + ", modelo=" + modelo + ", ano=" + ano + ", proprietario=" + proprietario ;
+        return "MCarro{" + "idCarro=" + idCarro + " carro=" + carro + " marca=" + marca + " modelo=" + modelo + " ano=" + ano + " proprietario=" + proprietario + " renavam=" + renavam + '}';
     }
+
+    
 
 }

@@ -9,7 +9,7 @@ package model;
  *
  * @author 182120038
  */
-public class Carro {
+public class MPessoa {
 
     private int idCarro;
     private String cpf;
@@ -17,10 +17,10 @@ public class Carro {
     private int idade;
     private String endereco;
 
-    public Carro() {
+    public MPessoa() {
     }
 
-    public Carro(int idCarro, String cpf, String nome, int idade, String endereco) {
+    public MPessoa(int idCarro, String cpf, String nome, int idade, String endereco) {
         this.idCarro = idCarro;
         this.cpf = cpf;
         this.nome = nome;
