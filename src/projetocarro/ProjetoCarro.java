@@ -271,9 +271,11 @@ public class ProjetoCarro {
                 carro = cadCarro.getCarroRenavam(renavam);
                 if (carro != null) {
                     System.out.println("Carro já cadastrado: " + carro.getCarro());
+                    return;
                 }
             } else {
                 System.out.println("Renavam inválido!");
+                return;
             }
         } while (!isRenavam);
 
@@ -310,6 +312,7 @@ public class ProjetoCarro {
 
         for (MCarro c : cadCarro.getCarros()) {
             System.out.println("---->");
+            System.out.println("Renavam:\t" + c.getRenavam());
             System.out.println("Carro:\t" + c.getCarro());
             System.out.println("Modelo:\t" + c.getModelo());
             System.out.println("Ano:\t" + c.getAno());
