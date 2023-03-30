@@ -292,10 +292,7 @@ public class ProjetoCarro {
         System.out.print("Informe o ano do carro: ");
         int ano = leiaNumInt();
 
-        System.out.println("Informe o Renavam: ");
-        renavam = leia.nextLine();
-
-        System.out.println("Informe o proprietario do carro: ");
+        System.out.print("Informe o nome do proprietario do carro: ");
         String proprietario = leia.nextLine();
 
         MCarro c = new MCarro(idCarro, nome, marca, modelo, ano, proprietario, renavam);
@@ -306,6 +303,64 @@ public class ProjetoCarro {
 
     private static void editarCarro() {
 
+        System.out.println("-- Editar Carro --");
+        System.out.print("Informe o Renavam: ");
+        String renavam = leia.nextLine();
+        if (CCarro.ValidaRENAVAM(renavam)) {
+            MCarro carro = cadCarro.getCarroRenavam(renavam);
+            if (carro != null) {
+                System.out.println("1 - Nome:\t\t" + carro.getCarro());
+                System.out.println("2 - Marca:\t\t" + carro.getMarca());
+                System.out.println("3 - Modelo:\t\t" + carro.getModelo());
+                System.out.println("4 - Ano:\t\t" + carro.getAno());
+                System.out.println("5 - Proprietario:\t" + carro.getProprietario());
+                System.out.println("6 - Todas as opções acima");
+                System.out.print("Qual das opções deseja alterar? 1 || 2 || 3 || 4 || 5 || 6\n Digite aqui: ");
+                int opEditar = leiaNumInt();
+                switch (opEditar) {
+                    case 1:
+                        System.out.print("Informe o nome do carro: ");
+                        carro.setCarro(leia.nextLine());
+                        break;
+                    case 2:
+                        System.out.print("Informe a marca do carro: ");
+                        carro.setMarca(leia.nextLine());
+                        break;
+                    case 3:
+                        System.out.print("Informe o modelo do carro: ");
+                        carro.setModelo(leia.nextLine());
+                        break;
+                    case 4:
+                        System.out.print("Informe o ano do carro: ");
+                        carro.setAno(leia.nextInt());
+                        break;
+                    case 5:
+                        System.out.print("Informe o dono do carro: ");
+                        carro.setProprietario(leia.nextLine());
+                        break;
+                    case 6:
+                        System.out.print("Informe o nome do carro: ");
+                        carro.setCarro(leia.nextLine());
+                        System.out.print("Informe a marca do carro: ");
+                        carro.setMarca(leia.nextLine());
+                        System.out.print("Informe o modelo do carro: ");
+                        carro.setModelo(leia.nextLine());
+                        System.out.print("Informe o ano do carro: ");
+                        carro.setAno(leia.nextInt());
+                        System.out.print("Informe o dono do carro: ");
+                        carro.setProprietario(leia.nextLine());
+                        break;
+                    default:
+                        System.out.println("Opção inválida!");
+                        break;
+                }
+                System.out.println("Carro editado com sucesso!");
+            } else {
+                System.out.println("Carro não cadastrado!");
+            }
+        } else {
+            System.out.println("Renavam inválido!");
+        }
     }//fim editarCarro
 
     private static void listarCarro() {
@@ -313,9 +368,9 @@ public class ProjetoCarro {
         for (MCarro c : cadCarro.getCarros()) {
             System.out.println("---->");
             System.out.println("Renavam:\t" + c.getRenavam());
-            System.out.println("Carro:\t" + c.getCarro());
-            System.out.println("Modelo:\t" + c.getModelo());
-            System.out.println("Ano:\t" + c.getAno());
+            System.out.println("Carro:\t\t" + c.getCarro());
+            System.out.println("Modelo:\t\t" + c.getModelo());
+            System.out.println("Ano:\t\t" + c.getAno());
         }
     }//fim listarCarro
 
