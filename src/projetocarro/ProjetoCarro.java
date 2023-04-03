@@ -315,7 +315,8 @@ public class ProjetoCarro {
                 System.out.println("4 - Ano:\t\t" + carro.getAno());
                 System.out.println("5 - Proprietario:\t" + carro.getProprietario());
                 System.out.println("6 - Todas as opções acima");
-                System.out.print("Qual das opções deseja alterar? 1 || 2 || 3 || 4 || 5 || 6\n Digite aqui: ");
+                System.out.println("Qual das opções deseja alterar? 1 || 2 || 3 || 4 || 5 || 6 ");
+                System.out.print("Digite aqui: ");
                 int opEditar = leiaNumInt();
                 switch (opEditar) {
                     case 1:
